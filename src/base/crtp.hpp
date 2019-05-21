@@ -7,10 +7,6 @@ namespace longlp::base {
    public:
     [[nodiscard]] T&       underlying() { return static_cast<T&>(*this); }
     [[nodiscard]] const T& underlying() const { return static_cast<const T&>(*this); }
-
-   private:
-    constexpr explicit crtp() = default;
-    friend CRTPType<T>;
   };
 }  // namespace longlp::base
 

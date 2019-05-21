@@ -11,6 +11,10 @@ namespace longlp::algorithm {
 
     void Binarize(cv::Mat& input) const { this->underlying().BinarizeImpl(input); }
 
+   private:
+    friend Derived;
+    explicit constexpr BinarizationAlgorithm() = default;
+
     /*
      * Implement
      * [[nodiscard]] cv::Mat BinarizeImpl(const cv::Mat& input) const
