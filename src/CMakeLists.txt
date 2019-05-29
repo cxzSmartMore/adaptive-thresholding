@@ -3,4 +3,4 @@
 
 # CONFIG---------------------------------------------------------------------------------------------------------------
 add_subdirectory (base)
-add_subdirectory (binarization)
+add_subdirectory (image_processing)

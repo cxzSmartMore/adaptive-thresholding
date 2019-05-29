@@ -1,12 +1,12 @@
-#ifndef SRC_BINARIZATION_PERFORMANCE_CONFUSION_MATRIX_HPP
-#define SRC_BINARIZATION_PERFORMANCE_CONFUSION_MATRIX_HPP
+#ifndef SRC_IMAGE_PROCESSING_PERFORMANCE_METRIC_CONFUSION_MATRIX_HPP
+#define SRC_IMAGE_PROCESSING_PERFORMANCE_METRIC_CONFUSION_MATRIX_HPP
 
 #pragma once
 #include <cstdint>
 #include <opencv2/core.hpp>
 #include <optional>
 
-namespace longlp::binarization {
+namespace longlp::image_processing {
   struct ConfusionMatrix {
     // Create confusion matrix for ground_truth and candidate binary images
     // WARN: make sure input is grayscale image
@@ -50,6 +50,6 @@ namespace longlp::binarization {
     // number of classified as negative pixels: candidate[i] = white
     uint64_t ClassifiedNegative() const;
   };
-}  // namespace longlp::binarization
+}  // namespace longlp::image_processing
 
-#endif  // SRC_BINARIZATION_PERFORMANCE_CONFUSION_MATRIX_HPP
+#endif  // SRC_IMAGE_PROCESSING_PERFORMANCE_METRIC_CONFUSION_MATRIX_HPP

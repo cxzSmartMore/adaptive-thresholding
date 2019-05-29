@@ -1,6 +1,6 @@
-#include "binarization/performance/confusion_matrix.hpp"
-#include "binarization/constant.hpp"
-using longlp::binarization::ConfusionMatrix;
+#include "confusion_matrix.hpp"
+#include "image_processing/constant.hpp"
+using longlp::image_processing::ConfusionMatrix;
 
 uint64_t ConfusionMatrix::Total() const {
   return true_positive + true_negative + false_positive + false_negative;
