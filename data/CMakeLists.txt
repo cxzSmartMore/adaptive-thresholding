@@ -3,7 +3,7 @@
 
 # SETUP TARGETS---------------------------------------------------------------------------------------------------------
 add_custom_target (
-    ${LONGLP_PROJECT_TARGET_NAME}_Data
+    Data
     ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory ./data ${CMAKE_BINARY_DIR}/data
     VERBATIM

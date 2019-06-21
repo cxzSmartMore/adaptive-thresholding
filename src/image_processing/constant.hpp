@@ -9,10 +9,10 @@ namespace longlp::image_processing {
   constexpr auto    GRAYSCALE_MIN   = GRAYSCALE_BLACK;
   constexpr auto    GRAYSCALE_MAX   = GRAYSCALE_WHITE;
 
-  using AlgorithmTag                     = uint64_t;
+  using AlgorithmTag                     = uint32_t;
   constexpr AlgorithmTag NoTag           = 0;
-  constexpr AlgorithmTag Binarization    = 1 << 0;
-  constexpr AlgorithmTag Skeletonization = 1 << 1;
+  constexpr AlgorithmTag Binarization    = 1;
+  constexpr AlgorithmTag Skeletonization = 2;
 
   using GrayScalePixel = uint8_t;
 }  // namespace longlp::image_processing

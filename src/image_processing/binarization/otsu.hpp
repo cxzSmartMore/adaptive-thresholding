@@ -11,13 +11,16 @@ namespace longlp::image_processing {
   struct AlgorithmBase<Otsu>::Parameter {};
 
   class Otsu final : public AlgorithmBase<Otsu> {
+   public:
+    using Parameter = AlgorithmBase<Otsu>::Parameter;
+
    private:
     friend AlgorithmBase<Otsu>;
 
     void                                 ProcessImpl(cv::Mat& input, const Parameter& param) const;
     [[nodiscard]] constexpr AlgorithmTag GetTagImpl() const { return Binarization; }
     [[nodiscard]] constexpr std::string_view GetNameImpl() const { return "Otsu"; }
-    static constexpr auto                    HISTOGRAM_SIZE = 256U;
+    static constexpr auto                    HISTOGRAM_SIZE = 256;
   };
 }  // namespace longlp::image_processing
 

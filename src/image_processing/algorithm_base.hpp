@@ -14,7 +14,8 @@ namespace longlp::image_processing {
 
     [[nodiscard]] cv::Mat Process(const cv::Mat&                           input,
                                   const AlgorithmBase<Derived>::Parameter& param) const {
-      auto result_image = input.clone();
+      cv::Mat result_image;
+      input.copyTo(result_image);
       this->underlying().ProcessImpl(result_image, param);
       return result_image;
     }

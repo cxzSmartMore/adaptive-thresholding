@@ -1,0 +1,3 @@
+[submodule "external/indexed_view"]
+	path = external/indexed_view
+	url = https://github.com/anthonywilliams/indexed_view.git

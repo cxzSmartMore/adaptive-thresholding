@@ -1,7 +1,11 @@
-# GLOBALS---------------------------------------------------------------------------------------------------------------
-## LONGLP_PROJECT_DIR, LONGLP_PROJECT_TARGET_NAME, LONGLP_COMPILE_OPTIONS, LONGLP_COMPILE_FEATURES
+# GLOBALS
+## LONGLP_PROJECT_TARGET_NAME, LONGLP_COMPILE_OPTIONS, LONGLP_COMPILE_FEATURES
+## LONGLP_PROJECT_SRC_DIR
 ## OpenCV_LIBS, OpenMP::OpenMP_CXX, MPI::MPI_CXX
-# CONFIG----------------------------------------------------------------------------------------------------------------
+
+#
+# CONFIG
+#
 file (
     GLOB_RECURSE IMAGE_PROCESSING_SOURCES
     FOLLOW_SYMLINKS
@@ -10,9 +14,12 @@ file (
     *.cpp *.hpp
 )
 set (IMAGE_PROCESSING_LIBS
-     PUBLIC ${OpenCV_LIBS} OpenMP::OpenMP_CXX MPI::MPI_CXX
-     PRIVATE LongLP::Base)
-# SETUP TARGET----------------------------------------------------------------------------------------------------------
+     PUBLIC ${OpenCV_LIBS} OpenMP::OpenMP_CXX
+     PRIVATE LongLP::Base jss::IndexedView)
+
+#
+# SETUP TARGET
+#
 longlp_make_library (
     TARGET_NAME ImageProcessing
     ALIAS_NAME LongLP::ImageProcessing
@@ -20,7 +27,7 @@ longlp_make_library (
     SOURCES PRIVATE ${IMAGE_PROCESSING_SOURCES}
     COMPILE_OPTIONS PUBLIC ${LONGLP_COMPILE_OPTIONS}
     COMPILE_FEATURES PUBLIC ${LONGLP_COMPILE_FEATURES}
-    INCLUDE_DIRECTORIES PRIVATE ${LONGLP_PROJECT_DIR}/src
+    INCLUDE_DIRECTORIES PRIVATE ${LONGLP_PROJECT_SRC_DIR}
     LINK_LIBRARIES ${IMAGE_PROCESSING_LIBS}
 )
 
